@@ -1,0 +1,23 @@
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"Cannot read properties of undefined (reading 'main')","level":"error","message":"Error fetching recommendation"}
+{"error":"jwt malformed","level":"error","message":"Invalid token"}
+{"error":"jwt malformed","level":"error","message":"Invalid token"}
+{"level":"error","message":"Farmer already exists"}
+{"error":"Farmer is not defined","level":"error","message":"Error generating recommendation","stack":"ReferenceError: Farmer is not defined\n    at C:\\agro-smart-farming\\agro-smart-farming\\routes\\recommendation.js:100:24\n    at Layer.handle [as handle_request] (C:\\agro-smart-farming\\agro-smart-farming\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\agro-smart-farming\\agro-smart-farming\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (C:\\agro-smart-farming\\agro-smart-farming\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"}
+{"error":"Farmer is not defined","level":"error","message":"Server error generating recommendation"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"level":"error","message":"Farmer already exists"}
+{"level":"error","message":"Farmer not found"}
+{"level":"error","message":"Farmer not found"}

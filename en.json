@@ -1,0 +1,88 @@
+{
+  "navbar": {
+    "brand": "Agro Smart Farming",
+    "dashboard": "Dashboard",
+    "weather": "Weather",
+    "recommendation": "Recommendation",
+    "logout": "Logout",
+    "language": "English"
+  },
+  "dashboard": {
+    "title": "Farmer Dashboard",
+    "welcome": "Welcome, {name}!",
+    "weatherCard": {
+      "title": "Weather Information",
+      "error": "Failed to fetch weather data."
+    },
+    "temperature": "Temperature: {temperature}°C",
+    "humidity": "Humidity: {humidity}%",
+    "description": "Description: {description}",
+    "recommendationForm": {
+      "title": "Get Crop Recommendations",
+      "soilTypeLabel": "Soil Type:",
+      "soilTypePlaceholder": "Select Soil Type",
+      "acresLabel": "Land Area (Acres):",
+      "acresPlaceholder": "Enter land area in acres",
+      "submitButton": "Get Recommendations"
+    },
+    "invalidInputError": "Please provide valid inputs."
+  },
+  "login": {
+    "title": "Login to Agro Smart Farming",
+    "phonePlaceholder": "Phone Number (+919876543210)",
+    "sendOTPButton": "Generate OTP",
+    "otpMessage": "Enter the OTP sent to your phone:",
+    "otpPlaceholder": "Enter OTP",
+    "verifyOTPButton": "Verify OTP",
+    "noAccount": "Don't have an account? ",
+    "signupLink": "Sign Up",
+    "fillPhoneError": "Please enter your phone number.",
+    "invalidPhoneError": "Invalid phone number format. Use +91 followed by 10 digits.",
+    "invalidOTPError": "Invalid OTP. It must be a 6-digit number.",
+    "serverError": "An error occurred. Please try again.",
+    "otpSentMessage": "OTP sent successfully. Please check your phone."
+  },
+  "signup": {
+    "title": "Sign Up for Agro Smart Farming",
+    "namePlaceholder": "Name",
+    "phonePlaceholder": "Phone Number (+919876543210)",
+    "districtPlaceholder": "District",
+    "sendOTPButton": "Generate OTP",
+    "otpMessage": "Enter the OTP sent to your phone:",
+    "otpPlaceholder": "Enter OTP",
+    "verifyOTPButton": "Verify OTP",
+    "alreadyHaveAccount": "Already have an account? ",
+    "loginLink": "Login",
+    "fillAllFieldsError": "Please fill in all fields.",
+    "invalidPhoneError": "Invalid phone number format. Use +91 followed by 10 digits.",
+    "invalidOTPError": "Invalid OTP. It must be a 6-digit number.",
+    "serverError": "An error occurred. Please try again.",
+    "otpSentMessage": "OTP sent successfully. Please check your phone."
+  },
+  "recommendation": {
+    "title": "Crop Recommendation",
+    "landArea": "Land Area: {acres} Acres",
+    "soilType": "Soil Type: {soilType}",
+    "temperature": "Temperature: {temperature}°C",
+    "humidity": "Humidity: {humidity}%",
+    "season": "Season: {season}",
+    "recommendedCrops": "Recommended Crops: {crops}",
+    "recommendedFertilizers": "Recommended Fertilizers: {fertilizers}",
+    "estimatedProfit": "Estimated Profit: ₹{profit}",
+    "reason": "Reason: {reason}",
+    "backButton": "Back to Dashboard",
+    "invalidInputError": "Invalid input. Please try again."
+  },
+  "weather": {
+    "title": "Weather Information",
+    "location": "Weather in {location}",
+    "temperature": "Temperature: {temperature}°C",
+    "description": "Description: {description}",
+    "humidity": "Humidity: {humidity}%",
+    "windSpeed": "Wind Speed: {windSpeed} m/s",
+    "pressure": "Pressure: {pressure} hPa",
+    "sunrise": "Sunrise: {sunrise}",
+    "sunset": "Sunset: {sunset}",
+    "na": "N/A"
+  }
+}

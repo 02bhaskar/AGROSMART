@@ -1,0 +1,283 @@
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-27T15:47:47.993Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-27T15:47:47.979Z"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-27T15:48:36.063Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-27T15:48:36.079Z"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"error":"invalid signature","level":"error","message":"Invalid token"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-27T16:00:05.522Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-27T16:00:05.544Z"}
+{"district":"Coimbatore","level":"info","message":"Received signup request","name":"Jai","phoneNumber":"+919361148071"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"116383","phoneNumber":"+919361148071"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919361148071"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919361148071"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"acres":"50","level":"info","message":"Received recommendation request","soilType":"Clay"}
+{"district":"Coimbatore","level":"info","message":"Fetched weather data"}
+{"acres":"50","crops":["Rice","Maize"],"level":"info","message":"Recommendation generated","soilType":"Clay"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"acres":"50","level":"info","message":"Received recommendation request","soilType":"Sandy"}
+{"district":"Coimbatore","level":"info","message":"Fetched weather data"}
+{"error":"Cannot read properties of undefined (reading 'main')","level":"error","message":"Error fetching recommendation"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-27T16:08:04.823Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-27T16:08:04.837Z"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6835e1c1cd0df73c2209026a"}
+{"farmerId":"6835e1c1cd0df73c2209026a","level":"info","message":"Profile fetched"}
+{"error":"jwt malformed","level":"error","message":"Invalid token"}
+{"error":"jwt malformed","level":"error","message":"Invalid token"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-28T06:49:50.116Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-28T06:49:50.145Z"}
+{"district":"Coimbatore","level":"info","message":"Received signup request","name":"Jai","phoneNumber":"+919361148071"}
+{"level":"warn","message":"Farmer already exists","phoneNumber":"+919361148071"}
+{"level":"error","message":"Farmer already exists"}
+{"district":"Coimbatore","level":"info","message":"Received signup request","name":"Jai","phoneNumber":"+919361148072"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"843772","phoneNumber":"+919361148072"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919361148072"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919361148072"}
+{"level":"info","message":"Token verified","userId":"6836b2495295a419a539b41a"}
+{"farmerId":"6836b2495295a419a539b41a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6836b2495295a419a539b41a"}
+{"acres":"45","level":"info","message":"Received recommendation request","soilType":"Clay","userId":"6836b2495295a419a539b41a"}
+{"error":"Farmer is not defined","level":"error","message":"Error generating recommendation","stack":"ReferenceError: Farmer is not defined\n    at C:\\agro-smart-farming\\agro-smart-farming\\routes\\recommendation.js:100:24\n    at Layer.handle [as handle_request] (C:\\agro-smart-farming\\agro-smart-farming\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\agro-smart-farming\\agro-smart-farming\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at middleware (C:\\agro-smart-farming\\agro-smart-farming\\node_modules\\express-validator\\lib\\middlewares\\check.js:16:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"}
+{"error":"Farmer is not defined","level":"error","message":"Server error generating recommendation"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-28T06:55:52.390Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-28T06:55:52.420Z"}
+{"level":"info","message":"Token verified","userId":"6836b2495295a419a539b41a"}
+{"acres":"45","level":"info","message":"Received recommendation request","soilType":"Clay","userId":"6836b2495295a419a539b41a"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":100},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748414854,"id":1273865,"level":"info","main":{"feels_like":30.3,"grnd_level":956,"humidity":59,"pressure":1006,"sea_level":1006,"temp":28.64,"temp_max":28.64,"temp_min":28.64},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1748392104,"sunset":1748437844},"timezone":19800,"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":254,"gust":12.66,"speed":8.48}}
+{"acres":"45","level":"info","message":"Recommendation generated","recommendations":{"crops":["Rice","Wheat"],"fertilizers":["Compost","Phosphate"],"profit":2700000,"reason":"Clay soil retains water, ideal for rice and wheat."},"soilType":"Clay"}
+{"level":"info","message":"Token verified","userId":"6836b2495295a419a539b41a"}
+{"acres":"45","level":"info","message":"Received recommendation request","soilType":"Clay","userId":"6836b2495295a419a539b41a"}
+{"acres":"45","level":"info","message":"Recommendation generated","recommendations":{"crops":["Rice","Wheat"],"fertilizers":["Compost","Phosphate"],"profit":2700000,"reason":"Clay soil retains water, ideal for rice and wheat."},"soilType":"Clay"}
+{"level":"info","message":"Token verified","userId":"6836b2495295a419a539b41a"}
+{"farmerId":"6836b2495295a419a539b41a","level":"info","message":"Profile fetched"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"boss","phoneNumber":"+919456614976"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"376299","phoneNumber":"+919456614976"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919456614976"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919456614976"}
+{"level":"info","message":"Token verified","userId":"6836b494a8d61284b897404a"}
+{"farmerId":"6836b494a8d61284b897404a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6836b494a8d61284b897404a"}
+{"acres":"5","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6836b494a8d61284b897404a"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":100},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748415414,"id":1273865,"level":"info","main":{"feels_like":30.3,"grnd_level":956,"humidity":59,"pressure":1006,"sea_level":1006,"temp":28.64,"temp_max":28.64,"temp_min":28.64},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1748392104,"sunset":1748437844},"timezone":19800,"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":254,"gust":12.66,"speed":8.48}}
+{"acres":"5","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":250000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Token verified","userId":"6836b494a8d61284b897404a"}
+{"farmerId":"6836b494a8d61284b897404a","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-28T07:04:46.795Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-28T07:04:46.828Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-28T07:06:09.818Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-28T07:06:09.834Z"}
+{"district":"coimbatotre","level":"info","message":"Received signup request","name":"akil","phoneNumber":"+918056556578"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"188788","phoneNumber":"+918056556578"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+918056556578"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+918056556578"}
+{"level":"info","message":"Token verified","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"farmerId":"6836b69d5f3a1b7aeb3f75e6","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"farmerId":"6836b69d5f3a1b7aeb3f75e6","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"farmerId":"6836b69d5f3a1b7aeb3f75e6","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"acres":"45","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"district":"coimbatotre","error":"Request failed with status code 404","level":"warn","message":"Failed to fetch weather data, using fallback climate data"}
+{"acres":"45","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":2250000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Token verified","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"farmerId":"6836b69d5f3a1b7aeb3f75e6","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Received login request","phoneNumber":"+918056556578"}
+{"level":"info","message":"OTP generated and saved for login","otp":"714898","phoneNumber":"+918056556578"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+918056556578"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+918056556578"}
+{"level":"info","message":"Token verified","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"farmerId":"6836b69d5f3a1b7aeb3f75e6","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-29T03:18:20.156Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-29T03:18:20.196Z"}
+{"level":"info","message":"Received login request","phoneNumber":"+918056556578"}
+{"level":"info","message":"OTP generated and saved for login","otp":"259309","phoneNumber":"+918056556578"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+918056556578"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+918056556578"}
+{"level":"info","message":"Token verified","userId":"6836b69d5f3a1b7aeb3f75e6"}
+{"farmerId":"6836b69d5f3a1b7aeb3f75e6","level":"info","message":"Profile fetched"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"hari","phoneNumber":"+919036304713"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"543460","phoneNumber":"+919036304713"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919036304713"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919036304713"}
+{"level":"info","message":"Token verified","userId":"6837d28cf6fd7a1ebf5a8e98"}
+{"farmerId":"6837d28cf6fd7a1ebf5a8e98","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837d28cf6fd7a1ebf5a8e98"}
+{"acres":"10","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837d28cf6fd7a1ebf5a8e98"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":100},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748488458,"id":1273865,"level":"info","main":{"feels_like":25.08,"grnd_level":957,"humidity":85,"pressure":1008,"sea_level":1008,"temp":24.37,"temp_max":24.37,"temp_min":24.37},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1748478503,"sunset":1748524261},"timezone":19800,"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":246,"gust":8.42,"speed":4.58}}
+{"acres":"10","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":500000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-29T04:19:16.333Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-29T04:19:16.353Z"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"akil","phoneNumber":"+919089012300"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"896024","phoneNumber":"+919089012300"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919089012300"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919089012300"}
+{"level":"info","message":"Token verified","userId":"6837e093a5cd0f591d130eb6"}
+{"farmerId":"6837e093a5cd0f591d130eb6","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e093a5cd0f591d130eb6"}
+{"acres":"5","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837e093a5cd0f591d130eb6"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":100},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748492455,"id":1273865,"level":"info","main":{"feels_like":25.41,"grnd_level":958,"humidity":82,"pressure":1007,"sea_level":1007,"temp":24.74,"temp_max":24.74,"temp_min":24.74},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1748478503,"sunset":1748524261},"timezone":19800,"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":247,"gust":8.4,"speed":4.58}}
+{"acres":"5","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":250000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Token verified","userId":"6837e093a5cd0f591d130eb6"}
+{"acres":"5","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837e093a5cd0f591d130eb6"}
+{"acres":"5","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":250000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-29T04:45:06.975Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-29T04:45:06.989Z"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"bhaskar","phoneNumber":"+919345614976"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"193084","phoneNumber":"+919345614976"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919345614976"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919345614976"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"50","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837e693d3826a83f0d99eda"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":100},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748493608,"id":1273865,"level":"info","main":{"feels_like":25.64,"grnd_level":958,"humidity":84,"pressure":1007,"sea_level":1007,"temp":24.9,"temp_max":24.9,"temp_min":24.9},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1748478503,"sunset":1748524261},"timezone":19800,"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":242,"gust":8.77,"speed":4.84}}
+{"acres":"50","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":2500000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"5","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"5","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":250000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"20","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"20","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":1000000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-29T05:01:50.707Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-29T05:01:50.723Z"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"ashwath","phoneNumber":"+917603843147"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"341213","phoneNumber":"+917603843147"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+917603843147"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+917603843147"}
+{"level":"info","message":"Token verified","userId":"6837ea9c6f56a6f2028ed351"}
+{"farmerId":"6837ea9c6f56a6f2028ed351","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837ea9c6f56a6f2028ed351"}
+{"acres":"10","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837ea9c6f56a6f2028ed351"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":100},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748494569,"id":1273865,"level":"info","main":{"feels_like":25.75,"grnd_level":958,"humidity":86,"pressure":1007,"sea_level":1007,"temp":24.95,"temp_max":24.95,"temp_min":24.95},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1748478503,"sunset":1748524261},"timezone":19800,"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":242,"gust":8.77,"speed":4.84}}
+{"acres":"10","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":500000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-29T08:10:52.708Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-29T08:10:52.726Z"}
+{"level":"info","message":"Received login request","phoneNumber":"+917603843147"}
+{"level":"info","message":"OTP generated and saved for login","otp":"762280","phoneNumber":"+917603843147"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+917603843147"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+917603843147"}
+{"level":"info","message":"Token verified","userId":"6837ea9c6f56a6f2028ed351"}
+{"farmerId":"6837ea9c6f56a6f2028ed351","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837ea9c6f56a6f2028ed351"}
+{"acres":"100","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6837ea9c6f56a6f2028ed351"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":75},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748506327,"id":1273865,"level":"info","main":{"feels_like":29.74,"grnd_level":955,"humidity":83,"pressure":1006,"sea_level":1006,"temp":26.88,"temp_max":26.88,"temp_min":26.88},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","id":9206,"sunrise":1748478503,"sunset":1748524261,"type":1},"timezone":19800,"visibility":6000,"weather":[{"description":"light intensity drizzle","icon":"09d","id":300,"main":"Drizzle"}],"wind":{"deg":230,"gust":8.75,"speed":3.6}}
+{"acres":"100","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":5000000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Token verified","userId":"6837ea9c6f56a6f2028ed351"}
+{"farmerId":"6837ea9c6f56a6f2028ed351","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837ea9c6f56a6f2028ed351"}
+{"acres":"100","level":"info","message":"Received recommendation request","soilType":"Clay","userId":"6837ea9c6f56a6f2028ed351"}
+{"acres":"100","level":"info","message":"Recommendation generated","recommendations":{"crops":["Rice","Wheat"],"fertilizers":["Compost","Phosphate"],"profit":6000000,"reason":"Clay soil retains water, ideal for rice and wheat."},"soilType":"Clay"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"error":"jwt expired","level":"error","message":"Invalid token"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-29T10:32:03.029Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-29T10:32:03.059Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-05-29T10:33:13.282Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-05-29T10:33:13.302Z"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"Ashwath","phoneNumber":"+917603843147"}
+{"level":"warn","message":"Farmer already exists","phoneNumber":"+917603843147"}
+{"level":"error","message":"Farmer already exists"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"Shanthi","phoneNumber":"+919095303398"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"440330","phoneNumber":"+919095303398"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919095303398"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919095303398"}
+{"level":"info","message":"Token verified","userId":"6838383a8b22aae7f4bd8829"}
+{"farmerId":"6838383a8b22aae7f4bd8829","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6838383a8b22aae7f4bd8829"}
+{"farmerId":"6838383a8b22aae7f4bd8829","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6838383a8b22aae7f4bd8829"}
+{"farmerId":"6838383a8b22aae7f4bd8829","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6838383a8b22aae7f4bd8829"}
+{"acres":"10","level":"info","message":"Received recommendation request","soilType":"Sandy","userId":"6838383a8b22aae7f4bd8829"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":75},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1748514995,"id":1273865,"level":"info","main":{"feels_like":30.96,"grnd_level":955,"humidity":74,"pressure":1004,"sea_level":1004,"temp":27.88,"temp_max":27.88,"temp_min":27.88},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","id":9206,"sunrise":1748478503,"sunset":1748524261,"type":1},"timezone":19800,"visibility":6000,"weather":[{"description":"broken clouds","icon":"04d","id":803,"main":"Clouds"}],"wind":{"deg":220,"gust":8.75,"speed":3.6}}
+{"acres":"10","level":"info","message":"Recommendation generated","recommendations":{"crops":["Millets","Groundnuts"],"fertilizers":["Urea","Potash"],"profit":500000,"reason":"Sandy soil drains quickly, suitable for drought-resistant crops like millets."},"soilType":"Sandy"}
+{"level":"info","message":"Token verified","userId":"6838383a8b22aae7f4bd8829"}
+{"farmerId":"6838383a8b22aae7f4bd8829","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-07-11T12:38:14.221Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-07-11T12:38:14.246Z"}
+{"district":"hosur","level":"info","message":"Received signup request","name":"ram","phoneNumber":"+919345678956"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"844667","phoneNumber":"+919345678956"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919345678956"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919345678956"}
+{"level":"info","message":"Token verified","userId":"687106d2f9bc840a64e5d9a2"}
+{"farmerId":"687106d2f9bc840a64e5d9a2","level":"info","message":"Profile fetched"}
+{"district":"coimbatore","level":"info","message":"Received signup request","name":"tarun","phoneNumber":"+918273297283"}
+{"level":"info","message":"OTP generated and saved for signup","otp":"394937","phoneNumber":"+918273297283"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+918273297283"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+918273297283"}
+{"level":"info","message":"Token verified","userId":"68710741f9bc840a64e5d9a9"}
+{"farmerId":"68710741f9bc840a64e5d9a9","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"68710741f9bc840a64e5d9a9"}
+{"acres":"6","level":"info","message":"Received recommendation request","soilType":"Clay","userId":"68710741f9bc840a64e5d9a9"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":82},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1752237733,"id":1273865,"level":"info","main":{"feels_like":29.38,"grnd_level":958,"humidity":71,"pressure":1008,"sea_level":1008,"temp":27.25,"temp_max":27.25,"temp_min":27.25},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1752194137,"sunset":1752239951},"timezone":19800,"visibility":10000,"weather":[{"description":"broken clouds","icon":"04d","id":803,"main":"Clouds"}],"wind":{"deg":239,"gust":9.51,"speed":7.01}}
+{"acres":"6","level":"info","message":"Recommendation generated","recommendations":{"crops":["Rice","Wheat"],"fertilizers":["Compost","Phosphate"],"profit":360000,"reason":"Clay soil retains water, ideal for rice and wheat."},"soilType":"Clay"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-07-27T10:36:32.799Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-07-27T10:36:32.854Z"}
+{"level":"info","message":"Received login request","phoneNumber":"+915647896325"}
+{"level":"warn","message":"Farmer not found for login","phoneNumber":"+915647896325"}
+{"level":"error","message":"Farmer not found"}
+{"level":"info","message":"Received login request","phoneNumber":"+915647896325"}
+{"level":"warn","message":"Farmer not found for login","phoneNumber":"+915647896325"}
+{"level":"error","message":"Farmer not found"}
+{"level":"info","message":"Received login request","phoneNumber":"+919345614976"}
+{"level":"info","message":"OTP generated and saved for login","otp":"735559","phoneNumber":"+919345614976"}
+{"level":"info","message":"Received OTP verification request","phoneNumber":"+919345614976"}
+{"level":"info","message":"OTP verified successfully","phoneNumber":"+919345614976"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"23","level":"info","message":"Received recommendation request","soilType":"Loamy","userId":"6837e693d3826a83f0d99eda"}
+{"level":"info","message":"Fetching weather data for district:"}
+{"base":"stations","clouds":{"all":95},"cod":200,"coord":{"lat":11,"lon":76.9667},"dt":1753612562,"id":1273865,"level":"info","main":{"feels_like":35.51,"grnd_level":959,"humidity":64,"pressure":1008,"sea_level":1008,"temp":30.84,"temp_max":30.84,"temp_min":30.84},"message":"Weather API response:","name":"Coimbatore","sys":{"country":"IN","sunrise":1753576763,"sunset":1753622259},"timezone":19800,"visibility":10000,"weather":[{"description":"overcast clouds","icon":"04d","id":804,"main":"Clouds"}],"wind":{"deg":249,"gust":11.2,"speed":8.29}}
+{"acres":"23","level":"info","message":"Recommendation generated","recommendations":{"crops":["Maize","Vegetables"],"fertilizers":["NPK","Organic Compost"],"profit":1610000,"reason":"Loamy soil is fertile and well-balanced, good for a variety of crops."},"soilType":"Loamy"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"farmerId":"6837e693d3826a83f0d99eda","level":"info","message":"Profile fetched"}
+{"level":"info","message":"Token verified","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"44.98","level":"info","message":"Received recommendation request","soilType":"Clay","userId":"6837e693d3826a83f0d99eda"}
+{"acres":"44.98","level":"info","message":"Recommendation generated","recommendations":{"crops":["Rice","Wheat"],"fertilizers":["Compost","Phosphate"],"profit":2698800,"reason":"Clay soil retains water, ideal for rice and wheat."},"soilType":"Clay"}

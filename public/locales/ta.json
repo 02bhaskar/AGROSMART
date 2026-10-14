@@ -1,0 +1,88 @@
+{
+  "navbar": {
+    "brand": "அக்ரோ ஸ்மார்ட் பார்மிங்",
+    "dashboard": "டாஷ்போர்டு",
+    "weather": "வானிலை",
+    "recommendation": "பரிந்துரை",
+    "logout": "வெளியேறு",
+    "language": "தமிழ்"
+  },
+  "dashboard": {
+    "title": "விவசாயி டாஷ்போர்டு",
+    "welcome": "வரவேற்கிறோம், {name}!",
+    "weatherCard": {
+      "title": "வானிலை தகவல்",
+      "error": "வானிலை தரவைப் பெற முடியவில்லை."
+    },
+    "temperature": "வெப்பநிலை: {temperature}°C",
+    "humidity": "ஈரப்பதம்: {humidity}%",
+    "description": "விளக்கம்: {description}",
+    "recommendationForm": {
+      "title": "பயிர் பரிந்துரைகளைப் பெறுங்கள்",
+      "soilTypeLabel": "மண் வகை:",
+      "soilTypePlaceholder": "மண் வகையைத் தேர்ந்தெடுக்கவும்",
+      "acresLabel": "நிலப்பரப்பு (ஏக்கர்):",
+      "acresPlaceholder": "நிலப்பரப்பை ஏக்கரில் உள்ளிடவும்",
+      "submitButton": "பரிந்துரைகளைப் பெறு"
+    },
+    "invalidInputError": "சரியான உள்ளீடுகளை வழங்கவும்."
+  },
+  "login": {
+    "title": "அக்ரோ ஸ்மார்ட் பார்மிங்கில் உள்நுழையவும்",
+    "phonePlaceholder": "தொலைபேசி எண் (+919876543210)",
+    "sendOTPButton": "OTP உருவாக்கு",
+    "otpMessage": "உங்கள் தொலைபேசியில் அனுப்பப்பட்ட OTP-யை உள்ளிடவும்:",
+    "otpPlaceholder": "OTP உள்ளிடவும்",
+    "verifyOTPButton": "OTP சரிபார்க்கவும்",
+    "noAccount": "கணக்கு இல்லையா? ",
+    "signupLink": "பதிவு செய்யவும்",
+    "fillPhoneError": "தயவுசெய்து உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்.",
+    "invalidPhoneError": "தவறான தொலைபேசி எண் வடிவம். +91 பின்னர் 10 இலக்கங்களைப் பயன்படுத்தவும்.",
+    "invalidOTPError": "தவறான OTP. இது 6 இலக்க எண்ணாக இருக்க வேண்டும்.",
+    "serverError": "பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்.",
+    "otpSentMessage": "OTP வெற்றிகரமாக அனுப்பப்பட்டது. உங்கள் தொலைபேசியை சரிபார்க்கவும்."
+  },
+  "signup": {
+    "title": "அக்ரோ ஸ்மார்ட் பார்மிங்கிற்கு பதிவு செய்யவும்",
+    "namePlaceholder": "பெயர்",
+    "phonePlaceholder": "தொலைபேசி எண் (+919876543210)",
+    "districtPlaceholder": "மாவட்டம்",
+    "sendOTPButton": "OTP உருவாக்கு",
+    "otpMessage": "உங்கள் தொலைபேசியில் அனுப்பப்பட்ட OTP-யை உள்ளிடவும்:",
+    "otpPlaceholder": "OTP உள்ளிடவும்",
+    "verifyOTPButton": "OTP சரிபார்க்கவும்",
+    "alreadyHaveAccount": "ஏற்கனவே கணக்கு உள்ளதா? ",
+    "loginLink": "உள்நுழையவும்",
+    "fillAllFieldsError": "தயவுசெய்து அனைத்து புலங்களையும் நிரப்பவும்.",
+    "invalidPhoneError": "தவறான தொலைபேசி எண் வடிவம். +91 பின்னர் 10 இலக்கங்களைப் பயன்படுத்தவும்.",
+    "invalidOTPError": "தவறான OTP. இது 6 இலக்க எண்ணாக இருக்க வேண்டும்.",
+    "serverError": "பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்.",
+    "otpSentMessage": "OTP வெற்றிகரமாக அனுப்பப்பட்டது. உங்கள் தொலைபேசியை சரிபார்க்கவும்."
+  },
+  "recommendation": {
+    "title": "பயிர் பரிந்துரை",
+    "landArea": "நிலப்பரப்பு: {acres} ஏக்கர்",
+    "soilType": "மண் வகை: {soilType}",
+    "temperature": "வெப்பநிலை: {temperature}°C",
+    "humidity": "ஈரப்பதம்: {humidity}%",
+    "season": "பருவம்: {season}",
+    "recommendedCrops": "பரிந்துரைக்கப்பட்ட பயிர்கள்: {crops}",
+    "recommendedFertilizers": "பரிந்துரைக்கப்பட்ட உரங்கள்: {fertilizers}",
+    "estimatedProfit": "மதிப்பிடப்பட்ட லாபம்: ₹{profit}",
+    "reason": "காரணம்: {reason}",
+    "backButton": "டாஷ்போர்டுக்கு திரும்பு",
+    "invalidInputError": "தவறான உள்ளீடு. மீண்டும் முயற்சிக்கவும்."
+  },
+  "weather": {
+    "title": "வானிலை தகவல்",
+    "location": "{location} இல் வானிலை",
+    "temperature": "வெப்பநிலை: {temperature}°C",
+    "description": "விளக்கம்: {description}",
+    "humidity": "ஈரப்பதம்: {humidity}%",
+    "windSpeed": "காற்று வேகம்: {windSpeed} மீ/வி",
+    "pressure": "அழுத்தம்: {pressure} hPa",
+    "sunrise": "சூரிய உதயம்: {sunrise}",
+    "sunset": "சூரிய அஸ்தமனம்: {sunset}",
+    "na": "கிடைக்கவில்லை"
+  }
+}

@@ -7,14 +7,16 @@ const Farmer = require('../models/Farmer');
 const authMiddleware = require('../auth'); // This should point to C:\agro-smart-farming\agro-smart-farming\auth.js
 
 // Logger setup
+const transports = [new winston.transports.Console()];
+if (!process.env.VERCEL) {
+  transports.push(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+  transports.push(new winston.transports.File({ filename: 'combined.log' }));
+}
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-    new winston.transports.Console(),
-  ],
+  transports,
 });
 
 // Generate a 6-digit OTP

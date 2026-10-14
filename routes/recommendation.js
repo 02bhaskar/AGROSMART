@@ -10,14 +10,16 @@ const Farmer = require('../models/Farmer'); // Ensure Farmer model is imported
 const cache = new NodeCache({ stdTTL: 3600 });
 
 // Logger setup
+const transports = [new winston.transports.Console()];
+if (!process.env.VERCEL) {
+  transports.push(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+  transports.push(new winston.transports.File({ filename: 'combined.log' }));
+}
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-    new winston.transports.Console(),
-  ],
+  transports,
 });
 
 // Standardized error response

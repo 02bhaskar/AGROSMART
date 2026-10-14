@@ -1,15 +1,17 @@
 const jwt = require('jsonwebtoken');
 const winston = require('winston');
 
-// Logger setup
+// Logger setup (console for serverless, file for local)
+const transports = [new winston.transports.Console()];
+if (!process.env.VERCEL) {
+  transports.push(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+  transports.push(new winston.transports.File({ filename: 'combined.log' }));
+}
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-    new winston.transports.Console()
-  ],
+  transports,
 });
 
 // Standardized error response

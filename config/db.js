@@ -2,21 +2,28 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const winston = require('winston');
 
-// Logger setup
+// Logger setup (console for serverless, file for local)
+const transports = [new winston.transports.Console()];
+if (!process.env.VERCEL) {
+  transports.push(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+  transports.push(new winston.transports.File({ filename: 'combined.log' }));
+}
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.json()
   ),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-    new winston.transports.Console()
-  ],
+  transports,
 });
 
 const connectDB = async () => {
+  // Reuse existing connection if active
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
+
   try {
     const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/agro_smart_farming';
     if (!uri) {
@@ -30,13 +37,15 @@ const connectDB = async () => {
     logger.info('MongoDB connected successfully');
   } catch (err) {
     logger.error('MongoDB connection error', { error: err.message });
-    process.exit(1);
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
+    throw err;
   }
 };
 
 module.exports = connectDB;
 
-// If executed directly, run connectDB for testing
 if (require.main === module) {
   connectDB().then(() => {
     console.log('MongoDB connection verified!');

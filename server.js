@@ -7,26 +7,27 @@ const authRoutes = require('./routes/auth');
 const weatherRoutes = require('./routes/weather');
 const recommendationRoutes = require('./routes/recommendation');
 
-// Logger setup
+// Logger setup (console for serverless, file for local)
+const transports = [new winston.transports.Console()];
+if (!process.env.VERCEL) {
+  transports.push(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+  transports.push(new winston.transports.File({ filename: 'combined.log' }));
+}
+
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.json()
   ),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-    new winston.transports.Console()
-  ],
+  transports,
 });
 
 // Validate environment variables
 const requiredEnvVars = ['MONGODB_URI', 'OPENWEATHER_API_KEY', 'JWT_SECRET'];
 requiredEnvVars.forEach(varName => {
   if (!process.env[varName]) {
-    logger.error(`Missing environment variable: ${varName}`);
-    process.exit(1);
+    logger.warn(`Missing environment variable: ${varName}`);
   }
 });
 
@@ -37,13 +38,13 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/locales', express.static(path.join(__dirname, 'locales')));
 
+// Connect to MongoDB
+connectDB();
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/weather', weatherRoutes);
 app.use('/api/recommendation', recommendationRoutes);
-
-// Connect to MongoDB
-connectDB();
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -51,7 +52,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: 'Server error', error: err.message });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
-});
+// Start server if run directly (local), otherwise export app for Vercel serverless
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    logger.info(`Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;

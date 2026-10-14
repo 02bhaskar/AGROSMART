@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="login.title">Login to Agro Smart Farming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+</head>
+<body class="bg-gray-100" onload="initI18n()">
+  <header>
+    <nav class="bg-green-600 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <img src="/logo.png" alt="Agro Smart Farming Logo" class="logo">
+          <h1 class="navbar-heading" data-i18n="navbar.brand">Agro Smart Farming</h1>
+        </div>
+        <div class="space-x-4 sm:flex sm:items-center">
+          <select id="language-toggle" class="bg-white text-black rounded px-2 py-1" aria-label="Select language">
+            <option value="en" data-i18n="navbar.language">English</option>
+            <option value="ta" data-i18n="navbar.language">தமிழ்</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto mt-6">
+    <h1 class="text-2xl font-semibold mb-4" data-i18n="login.title">Login to Agro Smart Farming</h1>
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+      <form id="loginForm">
+        <div class="mb-4">
+          <label for="phoneNumber" class="block text-sm font-medium text-gray-700" data-i18n="login.phonePlaceholder">Phone Number</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" class="mt-1 block w-full border rounded p-2" pattern="\+91[0-9]{10}" required data-i18n-placeholder="login.phonePlaceholder" aria-describedby="phoneHelp">
+          <div id="phoneHelp" class="text-sm text-gray-500"></div>
+        </div>
+        <button type="button" class="bg-green-600 text-white px-4 py-2 rounded w-full" onclick="generateOTP()" data-i18n="login.sendOTPButton" aria-label="Generate OTP for login">Generate OTP</button>
+        <p class="mt-2 text-center" data-i18n="login.noAccount">Don't have an account? <a href="/signup.html" class="text-green-600 hover:underline" data-i18n="login.signupLink">Sign Up</a></p>
+      </form>
+      <div id="otp-section" class="mt-4" style="display: none;">
+        <p class="mb-2" data-i18n="login.otpMessage">Enter the OTP sent to your phone:</p>
+        <div class="mb-4">
+          <label for="otp" class="block text-sm font-medium text-gray-700" data-i18n="login.otpPlaceholder">Enter OTP</label>
+          <input type="text" id="otp" name="otp" class="mt-1 block w-full border rounded p-2" pattern="[0-9]{6}" required data-i18n-placeholder="login.otpPlaceholder" aria-describedby="otpHelp">
+          <div id="otpHelp" class="text-sm text-gray-500"></div>
+        </div>
+        <button type="button" class="bg-green-600 text-white px-4 py-2 rounded w-full" onclick="verifyOTP()" data-i18n="login.verifyOTPButton" aria-label="Verify OTP for login">Verify OTP</button>
+      </div>
+      <div id="error-message" class="text-red-500 mt-2"></div>
+    </div>
+  </main>
+
+  <script>
+    async function generateOTP() {
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const errorMessage = document.getElementById('error-message');
+      const phonePattern = /^\+91[0-9]{10}$/;
+      
+      console.log('Generating OTP for:', phoneNumber); // Debug log
+      
+      if (!phoneNumber) {
+        errorMessage.textContent = t('login.fillPhoneError');
+        console.log('Validation failed: Phone number is empty');
+        return;
+      }
+      if (!phonePattern.test(phoneNumber)) {
+        errorMessage.textContent = t('login.invalidPhoneError');
+        console.log('Validation failed: Invalid phone number format');
+        return;
+      }
+      
+      try {
+        errorMessage.textContent = '';
+        const response = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phoneNumber }),
+        });
+        console.log('Response status:', response.status); // Debug log
+        const data = await response.json();
+        console.log('Response data:', data); // Debug log
+        
+        if (response.ok && data.success) {
+          document.getElementById('otp-section').style.display = 'block';
+          errorMessage.textContent = t('login.otpSentMessage') || 'OTP sent successfully';
+        } else {
+          errorMessage.textContent = data.message || t('login.serverError');
+        }
+      } catch (err) {
+        errorMessage.textContent = t('login.serverError');
+        console.error('Error generating OTP:', err);
+      }
+    }
+
+    async function verifyOTP() {
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const otp = document.getElementById('otp').value;
+      const errorMessage = document.getElementById('error-message');
+      const otpPattern = /^[0-9]{6}$/;
+      
+      console.log('Verifying OTP for:', phoneNumber, 'OTP:', otp); // Debug log
+      
+      if (!otp || !otpPattern.test(otp)) {
+        errorMessage.textContent = t('login.invalidOTPError');
+        console.log('Validation failed: Invalid OTP format');
+        return;
+      }
+      
+      try {
+        errorMessage.textContent = '';
+        const response = await fetch('/api/auth/verify-otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phoneNumber, otp }),
+        });
+        console.log('Verify OTP response status:', response.status); // Debug log
+        const data = await response.json();
+        console.log('Verify OTP response data:', data); // Debug log
+        
+        if (response.ok && data.success) {
+          localStorage.setItem('token', data.token);
+          window.location.href = '/dashboard.html';
+        } else {
+          errorMessage.textContent = data.message || t('login.serverError');
+        }
+      } catch (err) {
+        errorMessage.textContent = t('login.serverError');
+        console.error('Error verifying OTP:', err);
+      }
+    }
+  </script>
+</body>
+</html>

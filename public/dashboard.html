@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="dashboard.title">Farmer Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+</head>
+<body class="bg-gray-100" onload="initI18n()">
+  <header>
+    <nav class="bg-green-600 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <img src="/logo.png" alt="Agro Smart Farming Logo" class="logo">
+          <h1 class="navbar-heading" data-i18n="navbar.brand">Agro Smart Farming</h1>
+        </div>
+        <div class="space-x-4 sm:flex sm:items-center">
+          <a href="/dashboard.html" class="hover:underline" data-i18n="navbar.dashboard">Dashboard</a>
+          <a href="/weather.html" class="hover:underline" data-i18n="navbar.weather">Weather</a>
+          <a href="/recommendation.html" class="hover:underline" data-i18n="navbar.recommendation">Recommendation</a>
+          <select id="language-toggle" class="bg-white text-black rounded px-2 py-1" aria-label="Select language">
+            <option value="en" data-i18n="navbar.language">English</option>
+            <option value="ta" data-i18n="navbar.language">தமிழ்</option>
+          </select>
+          <button onclick="logout()" class="text-white hover:underline" data-i18n="navbar.logout">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto mt-6">
+    <h1 class="text-2xl font-semibold mb-4" data-i18n="dashboard.title">Farmer Dashboard</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-4" data-i18n="dashboard.weatherCard.title">Weather Information</h2>
+        <div id="weather-error" class="text-red-500 mb-2"></div>
+        <p data-i18n="dashboard.temperature" data-i18n-temperature="temperature">Temperature: <span id="temperature">N/A</span>°C</p>
+        <p data-i18n="dashboard.humidity" data-i18n-humidity="humidity">Humidity: <span id="humidity">N/A</span>%</p>
+        <p data-i18n="dashboard.description" data-i18n-description="description">Description: <span id="description">N/A</span></p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-4" data-i18n="dashboard.recommendationForm.title">Get Crop Recommendations</h2>
+        <div id="form-error" class="text-red-500 mb-2"></div>
+        <form id="recommendationForm">
+          <div class="mb-4">
+            <label for="soilType" class="block text-sm font-medium text-gray-700" data-i18n="dashboard.recommendationForm.soilTypeLabel">Soil Type:</label>
+            <select id="soilType" name="soilType" class="mt-1 block w-full border rounded p-2" required aria-describedby="soilTypeHelp">
+              <option value="" data-i18n="dashboard.recommendationForm.soilTypePlaceholder">Select Soil Type</option>
+              <option value="Sandy">Sandy</option>
+              <option value="Clay">Clay</option>
+              <option value="Loamy">Loamy</option>
+              <option value="Silty">Silty</option>
+              <option value="Peaty">Peaty</option>
+            </select>
+            <div id="soilTypeHelp" class="text-sm text-gray-500"></div>
+          </div>
+          <div class="mb-4">
+            <label for="acres" class="block text-sm font-medium text-gray-700" data-i18n="dashboard.recommendationForm.acresLabel">Land Area (Acres):</label>
+            <input type="number" id="acres" name="acres" class="mt-1 block w-full border rounded p-2" min="0.01" step="0.01" required data-i18n-placeholder="dashboard.recommendationForm.acresPlaceholder" aria-describedby="acresHelp">
+            <div id="acresHelp" class="text-sm text-gray-500"></div>
+          </div>
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded" data-i18n="dashboard.recommendationForm.submitButton" aria-label="Get crop recommendations">Get Recommendations</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    async function fetchWeather() {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('/api/weather', {
+          headers: { 'Authorization': `Bearer ${token}` },
+        });
+        const data = await response.json();
+        if (response.ok) {
+          document.getElementById('weather-error').textContent = '';
+          document.getElementById('temperature').textContent = data.temperature || t('weather.na');
+          document.getElementById('humidity').textContent = data.humidity || t('weather.na');
+          document.getElementById('description').textContent = data.description || t('weather.na');
+        } else {
+          document.getElementById('weather-error').textContent = t('dashboard.weatherCard.error');
+        }
+      } catch (err) {
+        document.getElementById('weather-error').textContent = t('dashboard.weatherCard.error');
+        console.error('Error fetching weather:', err);
+      }
+    }
+
+    document.getElementById('recommendationForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const soilType = document.getElementById('soilType').value;
+      const acres = document.getElementById('acres').value;
+      
+      console.log('Form submission:', { soilType, acres }); // Debug log to verify inputs
+      
+      if (!soilType || soilType === '' || acres <= 0) {
+        document.getElementById('form-error').textContent = t('dashboard.invalidInputError');
+        console.log('Validation failed: Invalid soilType or acres');
+        return;
+      }
+      
+      document.getElementById('form-error').textContent = '';
+      window.location.href = `/recommendation.html?soilType=${encodeURIComponent(soilType)}&acres=${encodeURIComponent(acres)}`;
+    });
+
+    function logout() {
+      localStorage.removeItem('token');
+      window.location.href = '/login.html';
+    }
+
+    async function fetchFarmerName() {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('/api/auth/profile', {
+          headers: { 'Authorization': `Bearer ${token}` },
+        });
+        const data = await response.json();
+        if (response.ok) {
+          document.querySelector('[data-i18n-name="name"]').textContent = t('dashboard.welcome').replace('{name}', data.name);
+        }
+      } catch (err) {
+        console.error('Error fetching farmer name:', err);
+      }
+    }
+
+    window.addEventListener('load', () => {
+      fetchWeather();
+      fetchFarmerName();
+    });
+  </script>
+</body>
+</html>

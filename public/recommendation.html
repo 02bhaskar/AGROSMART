@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="recommendation.title">Crop Recommendation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+</head>
+<body class="bg-gray-100" onload="initI18n()">
+  <header>
+    <nav class="bg-green-600 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <img src="/logo.png" alt="Agro Smart Farming Logo" class="logo">
+          <h1 class="navbar-heading" data-i18n="navbar.brand">Agro Smart Farming</h1>
+        </div>
+        <div class="space-x-4 sm:flex sm:items-center">
+          <a href="/dashboard.html" class="hover:underline" data-i18n="navbar.dashboard">Dashboard</a>
+          <a href="/weather.html" class="hover:underline" data-i18n="navbar.weather">Weather</a>
+          <a href="/recommendation.html" class="hover:underline" data-i18n="navbar.recommendation">Recommendation</a>
+          <select id="language-toggle" class="bg-white text-black rounded px-2 py-1" aria-label="Select language">
+            <option value="en" data-i18n="navbar.language">English</option>
+            <option value="ta" data-i18n="navbar.language">தமிழ்</option>
+          </select>
+          <button onclick="logout()" class="text-white hover:underline" data-i18n="navbar.logout">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto mt-6">
+    <h1 class="text-2xl font-semibold mb-4" data-i18n="recommendation.title">Crop Recommendation</h1>
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">
+      <div id="error-message" class="text-red-500 mb-3"></div>
+      <p data-i18n="recommendation.landArea" data-i18n-acres="acres">Land Area: <span id="landArea">N/A</span> Acres</p>
+      <p data-i18n="recommendation.soilType" data-i18n-soilType="soilType">Soil Type: <span id="soilType">N/A</span></p>
+      <p data-i18n="recommendation.temperature" data-i18n-temperature="temperature">Temperature: <span id="temperature">N/A</span>°C</p>
+      <p data-i18n="recommendation.humidity" data-i18n-humidity="humidity">Humidity: <span id="humidity">N/A</span>%</p>
+      <p data-i18n="recommendation.season" data-i18n-season="season">Season: <span id="season">N/A</span></p>
+      <p data-i18n="recommendation.recommendedCrops" data-i18n-crops="crops">Recommended Crops: <span id="crops">N/A</span></p>
+      <p data-i18n="recommendation.recommendedFertilizers" data-i18n-fertilizers="fertilizers">Recommended Fertilizers: <span id="fertilizers">N/A</span></p>
+      <p data-i18n="recommendation.estimatedProfit" data-i18n-profit="profit">Estimated Profit: ₹<span id="profit">N/A</span></p>
+      <p data-i18n="recommendation.reason" data-i18n-reason="reason">Reason: <span id="reason">N/A</span></p>
+      <a href="/dashboard.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded mt-4" data-i18n="recommendation.backButton" aria-label="Back to dashboard">Back to Dashboard</a>
+    </div>
+  </main>
+
+  <script>
+    async function fetchRecommendations() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const soilType = params.get('soilType');
+        const acres = params.get('acres');
+        
+        console.log('Recommendation page params:', { soilType, acres }); // Debug log to verify inputs
+        
+        // Set landArea immediately since we have the value from the URL
+        document.getElementById('landArea').textContent = acres || t('weather.na');
+        
+        if (!soilType || !acres || acres <= 0) {
+          document.getElementById('error-message').textContent = t('recommendation.invalidInputError');
+          console.log('Validation failed: Invalid soilType or acres');
+          return;
+        }
+        
+        const token = localStorage.getItem('token');
+        if (!token) {
+          document.getElementById('error-message').textContent = 'Please log in to get recommendations.';
+          console.log('No token found, user not logged in');
+          window.location.href = '/login.html';
+          return;
+        }
+        
+        const response = await fetch('/api/recommendation', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ soilType, acres }),
+        });
+        
+        console.log('Recommendation API response status:', response.status); // Debug log
+        const data = await response.json();
+        console.log('Recommendation API response data:', data); // Debug log
+        
+        if (response.ok) {
+          document.getElementById('error-message').textContent = '';
+          document.getElementById('soilType').textContent = data.soilType || t('weather.na');
+          document.getElementById('temperature').textContent = data.climateData.temperature || t('weather.na');
+          document.getElementById('humidity').textContent = data.climateData.humidity || t('weather.na');
+          document.getElementById('season').textContent = data.season || t('weather.na');
+          document.getElementById('crops').textContent = data.recommendations.crops.join(', ') || t('weather.na');
+          document.getElementById('fertilizers').textContent = data.recommendations.fertilizers.join(', ') || t('weather.na');
+          document.getElementById('profit').textContent = data.recommendations.profit || t('weather.na');
+          document.getElementById('reason').textContent = data.recommendations.reason || t('weather.na');
+        } else {
+          document.getElementById('error-message').textContent = data.message || t('recommendation.invalidInputError');
+        }
+      } catch (err) {
+        document.getElementById('error-message').textContent = t('recommendation.invalidInputError');
+        console.error('Error fetching recommendations:', err);
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('token');
+      window.location.href = '/login.html';
+    }
+
+    window.addEventListener('load', fetchRecommendations);
+  </script>
+</body>
+</html>

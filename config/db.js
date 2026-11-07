@@ -18,23 +18,32 @@ const logger = winston.createLogger({
   transports,
 });
 
+let isConnected = false;
+
 const connectDB = async () => {
   // Reuse existing connection if active
-  if (mongoose.connection.readyState >= 1) {
+  if (mongoose.connection.readyState === 1) {
     return;
   }
 
-  try {
-    const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/agro_smart_farming';
-    if (!uri) {
-      throw new Error('MONGODB_URI is not defined in environment variables');
-    }
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    throw new Error('MONGODB_URI is not defined in environment variables');
+  }
 
-    await mongoose.connect(uri, {
+  if (process.env.VERCEL && uri.includes('localhost')) {
+    throw new Error('MONGODB_URI is set to localhost. Vercel runs in the cloud and requires a cloud database such as MongoDB Atlas (mongodb+srv://...).');
+  }
+
+  try {
+    const conn = await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000,
     });
+    isConnected = true;
     logger.info('MongoDB connected successfully');
+    return conn;
   } catch (err) {
     logger.error('MongoDB connection error', { error: err.message });
     if (!process.env.VERCEL) {

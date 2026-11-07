@@ -39,7 +39,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/locales', express.static(path.join(__dirname, 'locales')));
 
 // Connect to MongoDB
-connectDB();
+if (require.main === module) {
+  connectDB();
+}
+
+// Ensure database connection before running API routes
+app.use('/api', async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    logger.error('Database connection error in request', { error: err.message });
+    return res.status(500).json({
+      success: false,
+      message: 'Database connection error',
+      error: err.message
+    });
+  }
+});
 
 // Routes
 app.use('/api/auth', authRoutes);
